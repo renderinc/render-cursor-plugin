@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": "./scripts/validate-render-yaml.sh",
+        "matcher": "render.yaml"
+      }
+    ]
+  }
+}

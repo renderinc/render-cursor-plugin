@@ -1,24 +1,19 @@
 {
-  "name": "cursor-plugin-starters",
+  "name": "render-cursor-plugins",
   "owner": {
-    "name": "Your Org",
-    "email": "plugins@example.com"
+    "name": "Render",
+    "email": "support@render.com"
   },
   "metadata": {
-    "description": "Starter marketplace template for Cursor plugins",
+    "description": "Cursor plugins for deploying, debugging, and monitoring applications on Render",
     "version": "0.1.0",
     "pluginRoot": "plugins"
   },
   "plugins": [
     {
-      "name": "starter-simple",
-      "source": "./plugins/starter-simple",
-      "description": "Minimal plugin with rules and skills only"
-    },
-    {
-      "name": "starter-advanced",
-      "source": "./plugins/starter-advanced",
-      "description": "Full-featured plugin with rules, skills, agents, commands, hooks, and MCP"
+      "name": "render",
+      "source": "plugins/render",
+      "description": "Deploy, debug, and monitor applications on Render"
     }
   ]
 }

@@ -1,27 +1,28 @@
-# Cursor plugin template
+# Render Cursor Plugins
 
-Build and publish Cursor Marketplace plugins from a single repo.
+Cursor Marketplace plugins for deploying, debugging, and monitoring applications on [Render](https://render.com).
 
-Two starter plugins are included:
+## Plugins
 
-- **starter-simple**: rules and skills only
-- **starter-advanced**: rules, skills, agents, commands, hooks, MCP, and scripts
+- **render**: Rules, skills, agents, commands, hooks, and MCP config for the full Render workflow. See [`plugins/render/README.md`](plugins/render/README.md).
 
-## Getting started
+## Skills sync
 
-[Use this template](https://github.com/cursor/plugin-template/generate) to create a new repository, then customize:
+Skills in `plugins/render/skills/` are synced automatically from [render-oss/skills](https://github.com/render-oss/skills). A GitHub Action runs daily and opens a PR when changes are detected. To sync manually:
 
-1. `.cursor-plugin/marketplace.json`: set marketplace `name`, `owner`, and `metadata`.
-2. `plugins/*/.cursor-plugin/plugin.json`: set `name` (lowercase kebab-case), `displayName`, `author`, `description`, `keywords`, `license`, and `version`.
-3. Replace placeholder rules, skills, agents, commands, hooks, scripts, and logos.
+```bash
+./scripts/sync-skills.sh
+```
 
-To add more plugins, see `docs/add-a-plugin.md`.
+## Adding plugins
 
-## Single plugin vs multi-plugin
+To add more plugins, see [`docs/add-a-plugin.md`](docs/add-a-plugin.md).
 
-This template defaults to **multi-plugin** (multiple plugins in one repo).
+## Validation
 
-For a **single plugin**, move your plugin folder contents to the repository root, keep one `.cursor-plugin/plugin.json`, and remove `.cursor-plugin/marketplace.json`.
+```bash
+node scripts/validate-template.mjs
+```
 
 ## Submission checklist
 
@@ -31,4 +32,3 @@ For a **single plugin**, move your plugin folder contents to the repository root
 - All frontmatter metadata is present in rule, skill, agent, and command files.
 - Logos are committed and referenced with relative paths.
 - `node scripts/validate-template.mjs` passes.
-- Repository link is ready for submission to the Cursor team (Slack or `kniparko@anysphere.com`).

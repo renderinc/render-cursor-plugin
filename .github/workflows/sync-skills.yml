@@ -1,0 +1,35 @@
+name: Sync skills from render-oss/skills
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout plugin repo
+        uses: actions/checkout@v4
+
+      - name: Sync skills
+        run: ./scripts/sync-skills.sh --repo "https://github.com/render-oss/skills"
+        env:
+          GIT_TERMINAL_PROMPT: "0"
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Sync skills from render-oss/skills"
+          title: "Sync skills from render-oss/skills"
+          body: |
+            Automated sync of skill files from [render-oss/skills](https://github.com/render-oss/skills).
+
+            This PR was created by the `sync-skills` workflow. Review the changes and merge when ready.
+          branch: sync-skills
+          labels: skills-sync
+          delete-branch: true

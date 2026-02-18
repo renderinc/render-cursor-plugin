@@ -1,0 +1,13 @@
+{
+  "name": "render",
+  "displayName": "Render",
+  "version": "0.1.0",
+  "description": "Deploy, debug, and monitor applications on Render. Includes skills, rules, commands, an agent, MCP config, and hooks for the full Render workflow.",
+  "author": {
+    "name": "Render",
+    "email": "support@render.com"
+  },
+  "license": "MIT",
+  "keywords": ["render", "deploy", "cloud", "blueprint", "mcp", "monitoring", "debugging"],
+  "logo": "assets/logo.svg"
+}

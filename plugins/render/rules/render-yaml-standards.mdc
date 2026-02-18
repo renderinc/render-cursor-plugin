@@ -1,0 +1,16 @@
+---
+description: Render best practices for render.yaml Blueprints and deployed services
+alwaysApply: true
+---
+
+render-yaml-standards:
+
+- Use `plan: free` unless the user specifies a paid plan.
+- Mark secret environment variables with `sync: false` so users fill them in the Dashboard.
+- Bind HTTP servers to `0.0.0.0:$PORT` — Render sets the `PORT` variable automatically.
+- Choose the correct service type: `web` for public HTTP, `worker` for background jobs, `cron` for scheduled tasks, `static` for CDN-served sites, `pserv` for internal services.
+- Use native runtimes (`node`, `python`, `go`, `rust`, `ruby`, `elixir`) when possible; fall back to `docker` only when needed.
+- Wire databases with `fromDatabase` references instead of hard-coding connection strings.
+- Keep one `render.yaml` at the repository root. For monorepos, set `rootDir` on each service.
+- Include `buildCommand` and `startCommand` for every non-static service.
+- Set `healthCheckPath` on web services so Render can verify readiness.
