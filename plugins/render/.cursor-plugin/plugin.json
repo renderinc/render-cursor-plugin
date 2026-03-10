@@ -9,5 +9,11 @@
   },
   "license": "MIT",
   "keywords": ["render", "deploy", "cloud", "blueprint", "mcp", "monitoring", "debugging"],
-  "logo": "assets/logo.svg"
+  "logo": "assets/logo.svg",
+  "skills": "skills",
+  "rules": "rules",
+  "agents": "agents",
+  "commands": "commands",
+  "hooks": "hooks/hooks.json",
+  "mcpServers": ".mcp.json"
 }
