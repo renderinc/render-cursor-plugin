@@ -8,7 +8,7 @@ Cursor plugin for deploying, debugging, and monitoring applications on [Render](
 - `skills/`: Deploy, debug, and monitor skills (synced from [render-oss/skills](https://github.com/render-oss/skills))
 - `agents/`: Render deployment assistant
 - `commands/`: Deploy to Render and check service status
-- `mcp.json`: Render MCP server configuration
+- `.mcp.json`: Render MCP server configuration
 - `hooks/`: Validates render.yaml after edits
 
 ## Skills sync
