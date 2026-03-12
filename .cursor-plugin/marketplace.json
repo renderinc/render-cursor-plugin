@@ -6,8 +6,7 @@
   },
   "metadata": {
     "description": "Cursor plugins for deploying, debugging, and monitoring applications on Render",
-    "version": "0.1.0",
-    "pluginRoot": "plugins"
+    "version": "0.1.0"
   },
   "plugins": [
     {
