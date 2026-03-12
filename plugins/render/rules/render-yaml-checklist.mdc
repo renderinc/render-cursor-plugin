@@ -1,0 +1,16 @@
+---
+description: Validation checklist for render.yaml Blueprint files
+alwaysApply: false
+globs:
+  - "**/render.yaml"
+---
+
+render-yaml-checklist:
+
+- Every service must have `name`, `type`, and `runtime` (or `dockerfilePath` for Docker). See [Blueprint spec](https://render.com/docs/blueprint-spec).
+- Mark secrets with `sync: false` — never commit plaintext secret values.
+- `fromDatabase` references must match a `databases` entry by name.
+- Build commands must be non-interactive (`npm ci`, not `npm install`). See [Build command](https://render.com/docs/deploys#build-command).
+- Web services should set `healthCheckPath`. See [Health checks](https://render.com/deploys#health-checks).
+- Services that need to communicate must be in the same region. See [Private network](https://render.com/docs/private-network).
+- For the full list of supported fields, see the [Blueprint spec](https://render.com/docs/blueprint-spec).

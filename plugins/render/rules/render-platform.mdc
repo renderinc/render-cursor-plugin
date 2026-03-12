@@ -1,0 +1,13 @@
+---
+description: Render platform constraints for writing and configuring applications
+alwaysApply: true
+---
+
+render-platform:
+
+- Bind HTTP servers to `0.0.0.0:$PORT`. See [Port binding](https://render.com/docs/web-services#port-binding).
+- The filesystem is ephemeral — local writes are lost on every deploy, restart, or spin-down. Use a database or object storage instead. See [Ephemeral filesystem](https://render.com/deploys#ephemeral-filesystem).
+- Free web services spin down after 15 minutes of inactivity. Free Postgres databases expire after 30 days. See [Free plan limits](https://render.com/docs/free).
+- Render runs Linux — file paths are case-sensitive. Code that works on macOS or Windows may break if paths are cased incorrectly.
+- Deploy one application per service. See [FAQ](https://render.com/docs/faq).
+- For common deploy failures and fixes, see [Troubleshooting deploys](https://render.com/docs/troubleshooting-deploys).
