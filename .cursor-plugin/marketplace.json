@@ -12,7 +12,8 @@
     {
       "name": "render",
       "source": "plugins/render",
-      "description": "Deploy, debug, and monitor applications on Render"
+      "description": "Deploy, debug, and monitor applications on Render",
+      "category": "infrastructure"
     }
   ]
 }
