@@ -2,8 +2,8 @@
   "mcpServers": {
     "render": {
       "url": "https://mcp.render.com/mcp",
-      "headers": {
-        "Authorization": "Bearer ${RENDER_API_KEY}"
+      "auth": {
+        "CLIENT_ID": "cursor"
       }
     }
   }
